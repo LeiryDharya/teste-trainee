@@ -1,0 +1,38 @@
+<p-card>
+    <div class="flex flex-row align-items-center justify-content-between py-0 h-1rem">
+        <h5 class="text-base">FAMÍLIA DE PRODUTO</h5>
+        <button pButton type="button" label="Cadastrar Família" class="p-button-sm"></button>
+    </div>
+
+    <p-divider>
+        <i class="pi pi-angle-down"></i>
+        <span>FILTROS</span>
+    </p-divider>
+
+    <div class="card">
+        <div class="formgrid grid">
+            <div class="field col">
+                <label for="idFamília">ID Família:</label>
+                <input id="idFamília" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+            </div>
+
+            <div class="field col">
+                <label for="nomeFamília">Nome Família:</label>
+                <input id="nomeFamília" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+            </div>
+
+            <div class="field col">
+                <label for="statusFamília">Status:</label>
+                <select class="pCascadeSelect" id="statusFamília" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round outline-none focus:border-primary w-full" >
+                    <option value="Selecione">Selecione </option>
+                    <option *ngFor="let data of datas" [value]="data.id">{{ data.status }}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex flex-row justify-content-end">
+        <p-button styleClass="p-button-sm mr-2 surface-50 border-50 text-color-secondary">Limpar</p-button>
+        <p-button styleClass="p-button-sm">Enviar</p-button>
+    </div>
+</p-card>

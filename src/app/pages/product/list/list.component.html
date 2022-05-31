@@ -1,0 +1,47 @@
+<p-card> 
+    <div class="container">
+    
+    <div class="flex flex-row align-items-center justify-content-end">
+        <p-button styleClass="p-button-sm mb-2">Exportar</p-button>
+    </div>
+
+    <p-table [columns]="cols" [value]="datas">
+        <ng-template pTemplate="header" let-cols>
+            <tr>
+                <th *ngFor="let col of cols">{{ col.title }} <i [ngClass]="col.icon"></i></th>
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-data>
+            <tr>
+                <td>
+                    <button pButton type="button" class="p-button-link">
+                        <i class="pi pi-search"></i>
+                    </button>
+                </td>
+                <td>{{ data.id }}</td>
+                <td>{{ data.familia }}</td>
+                <td>{{ data.descricao }}</td>
+                <td>
+                    <p-tag>{{ data.status }}</p-tag>
+                </td>
+                <td>
+                    <button pButton type="button" class="p-button-link">
+                        <i class="pi pi-user-edit"></i>
+                    </button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+<div class="flex flex-row align-items-center justify-content-between py-0">
+    <span>Itens encontrados: {{ datas.length }}</span>
+    <p-paginator [rows]="1" [totalRecords]="1" [rowsPerPageOptions]="[10,20,30]"></p-paginator>
+</div>
+</p-card>
+
+
+
+
+
+
